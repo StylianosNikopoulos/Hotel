@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head> 
+    <base href="/public">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Dark Bootstrap Admin </title>
@@ -22,7 +23,23 @@
     <!-- Favicon-->
     <link rel="shortcut icon" href="admin/img/favicon.ico">
 
-  </head>
+
+<style>
+    label{display:inline-block;
+    width:200px;
+    }
+    .stylee{
+        padding-top: 30px;
+
+    }
+    .center{
+        text-align: center;
+        padding-top: 30px; 
+    }
+</style>
+
+
+</head>
   <body>
     <header class="header">   
       <nav class="navbar navbar-expand-lg">
@@ -48,6 +65,7 @@
                 <li class="active"><a href="{{ route('create_room') }}"> <i class="fa fa-file"></i>Add Room </a></li>
                 <li class="active"><a href="{{ route('view_room') }}"> <i class="fa fa-eye"></i>View Rooms </a></li>
 
+
       </nav>
       <!-- Sidebar Navigation end-->
       <div class="page-content">
@@ -57,6 +75,56 @@
           </div>
         </div>
   
+        <div class="center">
+            <h1 style="font-size:30px; font-weight:bold;">Update Room</h1>
+            <form action="{{ route('edit_room',$data->id) }}" method="Post" enctype="multipart/form-data">
+                @csrf
+                <div class="stylee">
+                    <label>Room Title</label>
+                    <input type="text" name="title" value="{{ $data->room_title }}">
+                </div>
+                <div class="stylee">
+                    <label>Description</label>
+                    <textarea name="description" id="" cols="30" rows="10">{{ $data->description }}"</textarea>
+                </div>
+                <div class="stylee">
+                    <label>Price</label>
+                    <input type="number" name="price" value="{{ $data->price }}">
+                </div>
+                <div class="stylee">
+                    <label>Room Type</label>
+                    <select name="room_type">
+                        <option selected value="{{ $data->room_type }}">{{ $data->room_type }}</option>
+
+                        <option value="regular">Regular</option>
+                        <option value="premium">Premium</option>
+                        <option value="deluxe">Deluxe</option>
+                    </select>
+                </div>
+                <div class="stylee">
+                    <label>Free Coffee</label>
+                    <select name="free_coffee">
+                        <option selected value="{{ $data->free_coffee }}">{{ $data->free_coffee }}</option>
+
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                <div class="stylee">
+                    <label>Current Image</label>
+                    <img width="100" src="/room/{{ $data->image }}" style="margin: auto;">
+                </div>
+
+                <div class="stylee">
+                    <label>Upload Image</label>
+                        <input type="file" name="image">
+                </div>
+                <div class="stylee">
+                    <input class="btn btn-primary" type="submit" value="Update Room">
+                </div>
+            </form>
+        </div>
    
     <!-- JavaScript files-->
     <script src="admin/vendor/jquery/jquery.min.js"></script>

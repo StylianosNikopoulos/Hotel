@@ -1,7 +1,7 @@
 <header class="site-header js-site-header">
     <div class="container-fluid">
       <div class="row align-items-center">
-        <div class="col-6 col-lg-4 site-logo" data-aos="fade"><a href="index.html">Sogo Hotel</a></div>
+        <div class="col-6 col-lg-4 site-logo" data-aos="fade"><a href="/">Hotel</a></div>
         <div class="col-6 col-lg-8">
 
 
@@ -18,11 +18,11 @@
                 <div class="row full-height align-items-center">
                   <div class="col-md-6 mx-auto">
                     <ul class="list-unstyled menu">
-                      <li class="active"><a href="index.html">Home</a></li>
-                      <li><a href="rooms.html">Rooms</a></li>
-                      <li><a href="about.html">About</a></li>
-                      <li><a href="contact.html">Contact</a></li>
-                      <li><a href="reservation.html">Reservation</a></li>
+                      <li class="active"><a href="/">Home</a></li>
+                      <li><a href="/">Rooms</a></li>
+                      <li><a href="/">About</a></li>
+                      <li><a href="/">Contact</a></li>
+                      <li><a href="/">Reservation</a></li>
                    
 
                       @if (Route::has('login'))

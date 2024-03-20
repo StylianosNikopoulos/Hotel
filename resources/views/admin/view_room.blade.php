@@ -22,6 +22,28 @@
     <!-- Favicon-->
     <link rel="shortcut icon" href="admin/img/favicon.ico">
 
+    <style>
+
+        .table_style{
+            border: 2px solid white;
+            margin: auto;
+            width: 90%;
+            text-align: center;
+            margin-top: 50px; 
+        }
+        .th_style{
+            background-color: aqua;
+            padding: 10px;
+        }
+        .tr_style{
+            border: 3px solid white;
+        }
+        .td_style{
+            padding: 10px;
+        }
+
+    </style>
+
   </head>
   <body>
     <header class="header">   
@@ -56,6 +78,45 @@
             <h2 class="h5 no-margin-bottom">Dashboard</h2>
           </div>
         </div>
+
+        <table class="table_style">
+            <tr>
+                <th class="th_style">Room Title</th>
+                <th class="th_style">Description</th>
+                <th class="th_style">Price</th>
+                <th class="th_style">Free_Coffee</th>
+                <th class="th_style">Room Type</th>
+                <th class="th_style">Image</th>
+                <th class="th_style">Delete</th>
+                <th class="th_style">Update</th>
+
+
+
+            </tr>
+
+            @foreach($data as $data)
+            <tr class="tr_style">
+                <td class="td_style">{{$data->room_title}}</td>
+                <td>{!! Str::limit($data->description,100) !!}</td>
+                <td>{{$data->price}}$</td>
+                <td>{{$data->free_coffee}}</td>
+                <td>{{$data->room_type}}</td>
+                <td>
+                    <img width="100"  src="room/{{$data->image}}">
+                </td>
+                <td>
+                    <a onclick="return confirm('Are you sure you want to delete this room?')" 
+                    class="btn btn-danger" href="{{ route('room_delete',$data->id) }}">Delete</a>
+                </td>
+                <td>
+                    <a
+                    class="btn btn-warning" href="{{ route('room_update',$data->id) }}">Update</a>
+                </td>
+
+
+            </tr>
+            @endforeach
+        </table>
   
    
     <!-- JavaScript files-->

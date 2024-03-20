@@ -60,8 +60,10 @@
         </div>
         <span class="heading">Main</span>
         <ul class="list-unstyled">
-                <li class="active"><a href="index.html"> <i class="icon-home"></i>Home </a></li>
-                <li class="active"><a href="{{ route('create_room') }}"> <i class="fa fa-file"></i>Rooms </a></li>
+                <li class="active"><a href="/"> <i class="icon-home"></i>Home </a></li>
+                <li class="active"><a href="{{ route('create_room') }}"> <i class="fa fa-file"></i>Add Room </a></li>
+                <li class="active"><a href="{{ route('view_room') }}"> <i class="fa fa-eye"></i>View Rooms </a></li>
+
 
       </nav>
       <!-- Sidebar Navigation end-->
