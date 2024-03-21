@@ -40,7 +40,8 @@
 
 ![65657024-A0FA-44FD-91C7-6E2F756E8AF4_1_201_a](https://github.com/StylianosNikopoulos/Hotel-Laravel/assets/59256689/c71e740b-9abc-4069-8863-ccfd8ce11ed6)
 
-ADMIN PANEL
+                                                                        ADMIN PANEL
+
 --------------------------------------------------------------------------
 
 ![2BEF4BE2-EB23-4F26-8D06-F604F8666B31_1_201_a](https://github.com/StylianosNikopoulos/Hotel-Laravel/assets/59256689/2e8e0d78-2dfb-485d-8007-fcf3f3f0f9b5)
