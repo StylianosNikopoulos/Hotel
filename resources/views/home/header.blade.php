@@ -19,10 +19,12 @@
                   <div class="col-md-6 mx-auto">
                     <ul class="list-unstyled menu">
                       <li class="active"><a href="/">Home</a></li>
-                      <li><a href="/">Rooms</a></li>
-                      <li><a href="/">About</a></li>
-                      <li><a href="/">Contact</a></li>
-                      <li><a href="/">Reservation</a></li>
+                      <li><a href="{{ route('about') }}">About</a></li>
+                      <li><a href="{{ route('contact') }}">Contact</a></li>
+                      @if(Auth::check() && Auth::user()->usertype == 'admin')
+                      <li><a href="/bookings">Admin Panel</a></li>
+                      @endif
+                  
                    
 
                       @if (Route::has('login'))
@@ -51,3 +53,4 @@
         </div>
       </div>
     </div>
+</header>

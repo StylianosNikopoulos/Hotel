@@ -41,9 +41,8 @@
         .td_style{
             padding: 10px;
         }
-
+  
     </style>
-
   </head>
   <body>
     <header class="header">   
@@ -72,6 +71,8 @@
                 <li class="active"><a href="{{ route('bookings') }}"> <i class="fa fa-calendar"></i>Bookings </a></li>
                 <li class="active"><a href="{{ route('all_messages') }}"> <i class="fa fa-commenting"></i>Messages </a></li>
 
+
+
       </nav>
       <!-- Sidebar Navigation end-->
       <div class="page-content">
@@ -81,44 +82,30 @@
           </div>
         </div>
 
+
         <table class="table_style">
             <tr>
-                <th class="th_style">Room Title</th>
-                <th class="th_style">Description</th>
-                <th class="th_style">Price</th>
-                <th class="th_style">Free_Coffee</th>
-                <th class="th_style">Room Type</th>
-                <th class="th_style">Image</th>
-                <th class="th_style">Delete</th>
-                <th class="th_style">Update</th>
-
-
+                <th class="th_style">Name</th>
+                <th class="th_style">Email</th>
+                <th class="th_style">Phone</th>
+                <th class="th_style">Message</th>
+                <th class="th_style">Send Email</th>
 
             </tr>
-
             @foreach($data as $data)
             <tr class="tr_style">
-                <td class="td_style">{{$data->room_title}}</td>
-                <td>{!! Str::limit($data->description,100) !!}</td>
-                <td>{{$data->price}}$</td>
-                <td>{{$data->free_coffee}}</td>
-                <td>{{$data->room_type}}</td>
+                <td class="td_style">{{ $data->name }}</td>
+                <td>{{ $data->email }}</td>
+                <td>{{ $data->phone }}</td>
+                <td>{{ $data->message }}</td>
                 <td>
-                    <img width="100"  src="room/{{$data->image}}">
+                  <a class="btn btn-success" href="{{ route('send_email',$data->id) }}">Send Email</a>
                 </td>
-                <td>
-                    <a onclick="return confirm('Are you sure you want to delete this room?')" 
-                    class="btn btn-danger" href="{{ route('room_delete',$data->id) }}">Delete</a>
-                </td>
-                <td>
-                    <a
-                    class="btn btn-warning" href="{{ route('room_update',$data->id) }}">Update</a>
-                </td>
-
-
             </tr>
             @endforeach
         </table>
+  
+
   
    
     <!-- JavaScript files-->

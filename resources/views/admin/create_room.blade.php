@@ -24,16 +24,18 @@
 
 
 <style>
-    label{display:inline-block;
-    width:200px;
+    label{
+      display:inline-block;
+      width: 500px;
     }
     .stylee{
-        padding-top: 30px;
+        padding-top: 10px;
 
     }
     .center{
-        text-align: center;
-        padding-top: 30px; 
+        padding-top: 10px; 
+        padding-left: 100px; 
+
     }
 </style>
 
@@ -63,6 +65,8 @@
                 <li class="active"><a href="/"> <i class="icon-home"></i>Home </a></li>
                 <li class="active"><a href="{{ route('create_room') }}"> <i class="fa fa-file"></i>Add Room </a></li>
                 <li class="active"><a href="{{ route('view_room') }}"> <i class="fa fa-eye"></i>View Rooms </a></li>
+                <li class="active"><a href="{{ route('bookings') }}"> <i class="fa fa-calendar"></i>Bookings </a></li>
+                <li class="active"><a href="{{ route('all_messages') }}"> <i class="fa fa-commenting"></i>Messages </a></li>
 
 
       </nav>
@@ -111,6 +115,7 @@
                         <input type="file" name="image">
                 </div>
                 <div class="stylee">
+                  <label></label>
                     <input class="btn btn-primary" type="submit" value="Add Room">
                 </div>
             </form>

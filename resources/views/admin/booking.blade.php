@@ -24,25 +24,25 @@
 
     <style>
 
-        .table_style{
-            border: 2px solid white;
-            margin: auto;
-            width: 90%;
-            text-align: center;
-            margin-top: 50px; 
-        }
-        .th_style{
-            background-color: aqua;
-            padding: 10px;
-        }
-        .tr_style{
-            border: 3px solid white;
-        }
-        .td_style{
-            padding: 10px;
-        }
+      .table_style{
+          border: 2px solid white;
+          margin: auto;
+          width: 90%;
+          text-align: center;
+          margin-top: 50px; 
+      }
+      .th_style{
+          background-color: aqua;
+          padding: 10px;
+      }
+      .tr_style{
+          border: 3px solid white;
+      }
+      .td_style{
+          padding: 10px;
+      }
 
-    </style>
+  </style>
 
   </head>
   <body>
@@ -72,6 +72,8 @@
                 <li class="active"><a href="{{ route('bookings') }}"> <i class="fa fa-calendar"></i>Bookings </a></li>
                 <li class="active"><a href="{{ route('all_messages') }}"> <i class="fa fa-commenting"></i>Messages </a></li>
 
+
+
       </nav>
       <!-- Sidebar Navigation end-->
       <div class="page-content">
@@ -80,46 +82,73 @@
             <h2 class="h5 no-margin-bottom">Dashboard</h2>
           </div>
         </div>
+  
 
         <table class="table_style">
-            <tr>
-                <th class="th_style">Room Title</th>
-                <th class="th_style">Description</th>
-                <th class="th_style">Price</th>
-                <th class="th_style">Free_Coffee</th>
-                <th class="th_style">Room Type</th>
-                <th class="th_style">Image</th>
-                <th class="th_style">Delete</th>
-                <th class="th_style">Update</th>
+          <tr>
+              <th class="th_style">Room_id</th>
+              <th class="th_style">Customer Name</th>
+              <th class="th_style">Email</th>
+              <th class="th_style">Phone</th>
+              <th class="th_style">Checkin</th>
+              <th class="th_style">Checkout</th>
+              <th class="th_style">Status</th>
+              <th class="th_style">Room Title</th>
+              <th class="th_style">Price</th>
+              <th class="th_style">Image</th>
+              <th class="th_style"> Delete</th>
+              <th class="th_style"> Update</th>
+
+               
 
 
 
-            </tr>
-
-            @foreach($data as $data)
-            <tr class="tr_style">
-                <td class="td_style">{{$data->room_title}}</td>
-                <td>{!! Str::limit($data->description,100) !!}</td>
-                <td>{{$data->price}}$</td>
-                <td>{{$data->free_coffee}}</td>
-                <td>{{$data->room_type}}</td>
-                <td>
-                    <img width="100"  src="room/{{$data->image}}">
-                </td>
-                <td>
-                    <a onclick="return confirm('Are you sure you want to delete this room?')" 
-                    class="btn btn-danger" href="{{ route('room_delete',$data->id) }}">Delete</a>
-                </td>
-                <td>
-                    <a
-                    class="btn btn-warning" href="{{ route('room_update',$data->id) }}">Update</a>
-                </td>
 
 
-            </tr>
-            @endforeach
-        </table>
-  
+
+          </tr>
+          @foreach($data as $data)
+          <tr class="tr_style">
+              <td class="td_style">{{ $data->room_id }}</td>
+              <td>{{ $data->name }}</td>
+              <td>{{ $data->email }}</td>
+              <td>{{ $data->phone }}</td>
+              <td>{{ $data->checkin }}</td>
+              <td>{{ $data->checkout }}</td>
+              <td>
+
+                @if($data->status =='approve')
+                <a style="color: green;">Approve</a>
+                @endif
+                @if($data->status =='reject')
+                <a style="color: red;">Reject</a>
+                @endif
+                @if($data->status =='waiting')
+                <a style="color: yellow;">Waiting</a>
+                @endif
+
+              </td>
+              <td>{{ $data->room->room_title }}</td>
+              <td>{{ $data->room->price }}$</td>
+              <td>
+                <img style="width: 100px" src="/room/{{ $data->room->image }}">
+              </td>
+              <td>
+                <a onclick="return confirm('Are you sure?');" class="btn btn-danger" href="{{ route('delete_booking',$data->id) }}">Delete</a>
+              </td>
+              <td>
+                <a class="btn btn-success" href="{{ route('approve_book',$data->id) }}">Approve</a>
+                <a class="btn btn-warning" href="{{ route('reject_book',$data->id) }}">Rejecte</a>
+
+              </td>
+
+          </tr>
+          @endforeach
+      </table>
+
+
+
+
    
     <!-- JavaScript files-->
     <script src="admin/vendor/jquery/jquery.min.js"></script>

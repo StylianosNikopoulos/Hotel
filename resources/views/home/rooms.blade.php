@@ -2,7 +2,7 @@
     <div class="container">
       <div class="row justify-content-center text-center mb-5">
         <div class="col-md-7">
-          <h2 class="heading" data-aos="fade-up">Rooms &amp; Suites</h2>
+          <h2 class="heading" data-aos="fade-up">Rooms</h2>
         </div>
       </div>
       

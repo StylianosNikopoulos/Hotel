@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use illuminate\Support\Facades\Auth;
 use App\Models\Room;
+use App\Models\Booking;
+use App\Models\Contact;
+
 class AdminController extends Controller
 {
     public function index()
@@ -84,5 +87,40 @@ class AdminController extends Controller
         return view('admin.view_room',compact('data'));
     }
 
+    public function bookings(){
+        $data =Booking::all();
+        return view('admin.booking',compact('data'));
+    }
+
+    public function delete_booking($id){
+        $data = Booking::find($id);
+        $data->delete();
+        return redirect()->back();
+    }
+
+    public function approve_book($id){
+        $booking = Booking::find($id);
+        $booking->status='approve';
+        $booking->save();
+        return redirect()->back();
+    }
+
+    public function reject_book($id){
+        $booking = Booking::find($id);
+        $booking->status='reject';
+        $booking->save();
+        return redirect()->back();
+    }
+
+    public function all_messages(){
+        $data = Contact::all();
+        return view('admin.all_message',compact('data'));
+    }
+
+    public function send_email($id){
+        $data=Contact::find($id);
+
+        return view('admin.send_email',compact('data'));
+    }
    
 }

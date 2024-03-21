@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head> 
+    <base href="/public">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Dark Bootstrap Admin </title>
@@ -22,29 +23,27 @@
     <!-- Favicon-->
     <link rel="shortcut icon" href="admin/img/favicon.ico">
 
+
     <style>
-
-        .table_style{
-            border: 2px solid white;
-            margin: auto;
-            width: 90%;
-            text-align: center;
-            margin-top: 50px; 
-        }
-        .th_style{
-            background-color: aqua;
-            padding: 10px;
-        }
-        .tr_style{
-            border: 3px solid white;
-        }
-        .td_style{
-            padding: 10px;
+        .container {
+            width: 80%; 
+            margin: 0 auto; 
+            padding-top: 10px; 
         }
 
+        .stylee {
+            padding-top: 10px;
+        }
+
+        label {
+            display: inline-block;
+            width: 500px;
+        }
+
+      
     </style>
-
-  </head>
+  
+</head>
   <body>
     <header class="header">   
       <nav class="navbar navbar-expand-lg">
@@ -72,6 +71,8 @@
                 <li class="active"><a href="{{ route('bookings') }}"> <i class="fa fa-calendar"></i>Bookings </a></li>
                 <li class="active"><a href="{{ route('all_messages') }}"> <i class="fa fa-commenting"></i>Messages </a></li>
 
+
+
       </nav>
       <!-- Sidebar Navigation end-->
       <div class="page-content">
@@ -81,44 +82,28 @@
           </div>
         </div>
 
-        <table class="table_style">
-            <tr>
-                <th class="th_style">Room Title</th>
-                <th class="th_style">Description</th>
-                <th class="th_style">Price</th>
-                <th class="th_style">Free_Coffee</th>
-                <th class="th_style">Room Type</th>
-                <th class="th_style">Image</th>
-                <th class="th_style">Delete</th>
-                <th class="th_style">Update</th>
 
-
-
-            </tr>
-
-            @foreach($data as $data)
-            <tr class="tr_style">
-                <td class="td_style">{{$data->room_title}}</td>
-                <td>{!! Str::limit($data->description,100) !!}</td>
-                <td>{{$data->price}}$</td>
-                <td>{{$data->free_coffee}}</td>
-                <td>{{$data->room_type}}</td>
-                <td>
-                    <img width="100"  src="room/{{$data->image}}">
-                </td>
-                <td>
-                    <a onclick="return confirm('Are you sure you want to delete this room?')" 
-                    class="btn btn-danger" href="{{ route('room_delete',$data->id) }}">Delete</a>
-                </td>
-                <td>
-                    <a
-                    class="btn btn-warning" href="{{ route('room_update',$data->id) }}">Update</a>
-                </td>
-
-
-            </tr>
-            @endforeach
-        </table>
+        <div class="container">
+            <h1>You are sending to: {{ $data->name }}</h1>
+            <br>
+            <form method="POST">
+                @csrf
+                <div class="stylee">
+                    <label>Subject</label>
+                    <input type="text" name="title">
+                </div>
+                <div class="stylee">
+                    <label>Body</label>
+                    <textarea name="description" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="stylee">
+                    <label></label>
+                    <input class="btn btn-primary" type="submit" value="Send Email">
+                </div>
+            </form>
+        </div>
+        
+        
   
    
     <!-- JavaScript files-->
