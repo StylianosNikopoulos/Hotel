@@ -25,14 +25,17 @@ class AdminController extends Controller
         return redirect()->route('login');
     }
 
+
     public function home(){
         $room = Room::all();
         return view('home.index',compact('room'));
     }
 
+
     public function create_room(){
         return view('admin.create_room');
     }
+
 
     public function add_room(Request $request){
         $data = new Room();
@@ -49,9 +52,8 @@ class AdminController extends Controller
         }
         $data->save();
         return redirect()->back();
-
-
     }
+
 
     public function room_delete($id){
         $data = Room::find($id);
@@ -64,6 +66,7 @@ class AdminController extends Controller
         $data=Room::find($id);
         return view('admin.update_room',compact('data'));
     }
+
 
     public function edit_room(Request $request,$id){
         $data = Room::find($id);
@@ -82,21 +85,25 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+
     public function view_room(){
         $data = Room::all();
         return view('admin.view_room',compact('data'));
     }
+
 
     public function bookings(){
         $data =Booking::all();
         return view('admin.booking',compact('data'));
     }
 
+
     public function delete_booking($id){
         $data = Booking::find($id);
         $data->delete();
         return redirect()->back();
     }
+
 
     public function approve_book($id){
         $booking = Booking::find($id);
@@ -105,6 +112,7 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+
     public function reject_book($id){
         $booking = Booking::find($id);
         $booking->status='reject';
@@ -112,15 +120,22 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+
     public function all_messages(){
         $data = Contact::all();
         return view('admin.all_message',compact('data'));
     }
 
+
     public function send_email($id){
         $data=Contact::find($id);
-
         return view('admin.send_email',compact('data'));
     }
-   
+
+    public function delete_email($id){
+        $data = Contact::find($id);
+        $data->delete();
+        return redirect()->back();
+        
+    }
 }

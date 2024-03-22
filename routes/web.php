@@ -6,8 +6,6 @@ use App\Http\Controllers\HomeController;
 
 
 
-
-
 Route::any('/room_details/{id}', [HomeController::class, 'room_details'])->name('room_details');
 
 Route::any('/add_booking/{id}', [HomeController::class, 'add_booking'])->name('add_booking');
@@ -48,3 +46,5 @@ Route::any('/room_delete/{id}', [AdminController::class, 'room_delete'])->name('
 Route::any('/room_update/{id}', [AdminController::class, 'room_update'])->name('room_update');
 
 Route::any('/edit_room/{id}', [AdminController::class, 'edit_room'])->name('edit_room');
+
+Route::any('/delete_email/{id}', [AdminController::class, 'delete_email'])->name('delete_email');

@@ -16,22 +16,21 @@
 
         #about {
             padding: 100px;
-            text-align: center; /* Center align the content within the about section */
+            text-align: center; 
         }
 
         #about div {
-            max-width: 600px; /* Optional: Limit the width of the content */
-            margin: 0 auto; /* Center align the content horizontally */
+            max-width: 600px; 
+            margin: 0 auto; 
         }
             .white-background {
             background-color: white;
             padding: 20px;
-            border-radius: 100px; /* Optional: adds rounded corners */
-            margin: 0 auto; /* Centers the element horizontally */
+            border-radius: 100px; 
+            margin: 0 auto; 
         }
-
-
     </style>
+
 </head>
 <body>
     <header>
@@ -40,7 +39,7 @@
         <section class="site-hero overlay" style="background-image: url(images/back.jpg)" data-stellar-background-ratio="0.5">
             <div class="container">
                 <div class="row justify-content-center align-items-center">
-                    <div class="col-md-8 text-center white-background mt-5"> <!-- Added mt-5 for top margin -->
+                    <div class="col-md-8 text-center white-background mt-5">
                         <section id="about">
                             <div>
                                 <h1>About Us</h1>
@@ -53,9 +52,6 @@
                 </div>
             </div>
         </section>
-        
-        
-        
     </header>
     @include('home.footer')
 </body>

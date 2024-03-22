@@ -4,14 +4,11 @@
         <div class="col-6 col-lg-4 site-logo" data-aos="fade"><a href="/">Hotel</a></div>
         <div class="col-6 col-lg-8">
 
-
           <div class="site-menu-toggle js-site-menu-toggle"  data-aos="fade">
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <!-- END menu-toggle -->
-
           <div class="site-navbar js-site-navbar">
             <nav role="navigation">
               <div class="container">
@@ -24,26 +21,18 @@
                       @if(Auth::check() && Auth::user()->usertype == 'admin')
                       <li><a href="/bookings">Admin Panel</a></li>
                       @endif
-                  
-                   
-
+            
                       @if (Route::has('login'))
                           @auth
                           <x-app-layout>
-                            
-                        </x-app-layout>
-                        
+                          </x-app-layout>
                           @else
                           <li><a href="{{ url('login') }}">Login</a></li>
-
-
-                              @if (Route::has('register'))
-                              <li><a href="{{ url('register') }}">Register</a></li>
-
-                              @endif
+                            @if (Route::has('register'))
+                            <li><a href="{{ url('register') }}">Register</a></li>
+                            @endif
                           @endauth
-                  @endif
-
+                       @endif
                     </ul>
                   </div>
                 </div>

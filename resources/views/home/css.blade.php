@@ -18,5 +18,4 @@
 <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
 <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
 
-<!-- Theme Style -->
 <link rel="stylesheet" href="css/style.css">

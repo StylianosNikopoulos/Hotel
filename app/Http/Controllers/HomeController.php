@@ -14,13 +14,13 @@ class HomeController extends Controller
         return view('home.room_details',compact('room'));
     }
 
+
     public function add_booking(Request $request,$id){
 
         $request->validate([
             'startDate' => 'required|date',
             'endDate' => 'date|after:startDate'
         ]);
-
         $data = new Booking;
         $data->room_id=$id;
         $data->name=$request->name;
@@ -49,10 +49,12 @@ class HomeController extends Controller
         return view('home.contact');
     }
 
+
     public function about(){
         return view('home.about');
     }
 
+    
     public function send_message(Request $request){
         $contact = new Contact;
         $contact->name=$request->name;

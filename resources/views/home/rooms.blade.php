@@ -8,7 +8,6 @@
       
       <div class="row">
         @foreach($room as $rooms)
-
         <div class="col-md-6 col-lg-4" data-aos="fade-up">
           <a  class="room">
             <figure class="img-wrap">
@@ -23,9 +22,6 @@
           </a>
         </div>
       @endforeach
-       
-
-
       </div>
     </div>
   </section>

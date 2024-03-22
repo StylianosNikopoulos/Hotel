@@ -4,6 +4,7 @@
     <base href="/public">
     @include('home.css')
     <style>
+      
       label {
         display: inline-block;
         width: 200px;
@@ -12,48 +13,36 @@
         width: 100%;
       }
       .message {
-    background-color: #00ff7b; /* Background color */
-    color: #333; /* Text color */
-    padding: 10px 20px; /* Padding */
-    border-radius: 5px; /* Rounded corners */
-    margin-bottom: 20px; /* Bottom margin */
-    border: 1px solid #ccc; /* Border */
+    background-color: #00ff7b; 
+    color: #333; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    margin-bottom: 20px; 
+    border: 1px solid #ccc; 
       }
       
+      header {
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: white; 
+      z-index: 1000; 
+      height: 70px; 
+      border-bottom: 3px solid #ccc; 
+    }
 
-      
-  header {
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: white; 
-  z-index: 1000; 
-  height: 70px; 
-  border-bottom: 3px solid #ccc; 
-}
+    header a {
+      padding: 30px; 
+      color: black;
+      font-weight: bold; 
+      font-size: 40px; 
+      font-style: italic; 
+    }
 
-header a {
-  padding: 30px; 
-  color: black;
-  font-weight: bold; 
-  font-size: 40px; 
-  font-style: italic; 
-
-
-}
-
-
-
-
-    </style>
+      </style>
 <header >
   <a href="/">Hotel</a>
 </header>
-
- 
-
-
-
 
   <body>
     <section class="section d-flex justify-content-center align-items-center">
@@ -75,14 +64,12 @@ header a {
       </div>
       <div class="col-md-4">
         <h1 style="font-size: 40px">Book Room</h1>
-
         @if(session()->has('message'))
         <div class="message">
           {{ session()->get('message') }}
         </div>
         @endif
-       
-       
+         
         @if($errors)
         @foreach($errors->all() as $errors)
         <li style="color: red">
