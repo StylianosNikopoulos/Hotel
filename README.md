@@ -1,4 +1,6 @@
-
+Introduction
+The Hotel Booking Website allows users to browse available rooms, book rooms for specific dates, and contact support for assistance. 
+Administrators have access to an admin panel where they can manage rooms, bookings, and user interactions
 
 ![18D0F50B-59D3-42B7-9D2D-AB1075F4D6C6_1_201_a](https://github.com/StylianosNikopoulos/Hotel-Laravel/assets/59256689/1641a043-555a-425c-9a58-b3fb4235313b)
 
