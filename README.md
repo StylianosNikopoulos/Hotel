@@ -1,6 +1,46 @@
-Introduction
-The Hotel Booking Website allows users to browse available rooms, book rooms for specific dates, and contact support for assistance. 
-Administrators have access to an admin panel where they can manage rooms, bookings, and user interactions
+# Introduction
+
+The Hotel Website allows users to browse available rooms, book rooms for specific dates, and contact support for assistance. 
+Administrators have access to an admin panel where they can manage rooms, bookings, and user interactions.This Website caters
+to both guests seeking accommodation and administrators responsible for managing the hotel's offerings and user interactions. 
+With its intuitive user interface, robust backend functionalities, and elegant design, the website promises an unparalleled 
+booking experience for users while empowering administrators with efficient tools to oversee operations.
+
+## Installation
+
+To get started with the Hotel Booking Website, follow these steps:
+
+1. **Clone the repository: git clone 'repository-url'**  
+2. **Install dependencies:'composer install'**
+3. **Configure the .env file:**  
+Update the `.env` file with your database credentials and other settings.
+4. **Generate application key:'php artisan key:generate'**  
+5. **Run database migrations:'php artisan migrate'**  
+6. **Seed the database with initial data:'php artisan db:seed'**  
+7. **Start the development server:'php artisan serve'**
+
+
+## Usage
+
+Once the installation is complete, you can start using the Hotel Booking Website:
+
+- **Navigate to the homepage:**  
+Browse available rooms and explore details.
+
+- **Register or login:**  
+Create a new account or log in to book rooms.
+
+- **Contact support:**  
+Reach out to support for any assistance or queries.
+
+- **Admin Panel:**  
+Administrators can access the admin panel to manage rooms, bookings, and user interactions.
+
+## Admin Panel
+
+Admins can access the admin panel by logging in with admin credentials. The admin panel provides functionality for managing rooms, bookings, and user interactions.
+ 
+
 
 ![18D0F50B-59D3-42B7-9D2D-AB1075F4D6C6_1_201_a](https://github.com/StylianosNikopoulos/Hotel-Laravel/assets/59256689/1641a043-555a-425c-9a58-b3fb4235313b)
 
