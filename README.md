@@ -40,7 +40,9 @@ Administrators can access the admin panel to manage rooms, bookings, and user in
 Admins can access the admin panel by logging in with admin credentials. The admin panel provides functionality for managing rooms, bookings, and user interactions.
  
 ## Disclaimer
-The Hotel Website utilizes templates for the homepage and admin panel, which have been customized to suit the project's requirements and preferences. While the core functionalities and features are built from scratch, certain visual elements and layout designs may have been adapted from existing templates for efficiency and aesthetics. Any resemblance to other websites or templates is purely coincidental, and all efforts have been made to ensure a unique and tailored user experience for visitors and administrators alike.
+While the Hotel Website is built upon Laravel, it utilizes templates for the homepage and admin panel. 
+These templates have been extensively modified to align with the project's unique design and functionality requirements. 
+Despite utilizing templates as a foundation, significant customizations have been made to ensure a distinctive and tailored user experience. 
 
 ![18D0F50B-59D3-42B7-9D2D-AB1075F4D6C6_1_201_a](https://github.com/StylianosNikopoulos/Hotel-Laravel/assets/59256689/1641a043-555a-425c-9a58-b3fb4235313b)
 
@@ -84,7 +86,7 @@ The Hotel Website utilizes templates for the homepage and admin panel, which hav
 
 
 
-ADMIN PANEL
+## ADMIN PANEL
 
 
 --------------------------------------------------------------------------
