@@ -1,9 +1,7 @@
 # Introduction
 
 The Hotel Website, built on the Laravel framework, allows users to browse available rooms, book rooms for specific dates, and contact support for assistance. 
-Administrators have access to an admin panel where they can manage rooms, bookings, and user interactions. This Website caters to both guests seeking accommodation 
-and administrators responsible for managing the hotel's offerings and user interactions. With its intuitive user interface, robust backend functionalities, and elegant design, 
-the website promises an unparalleled booking experience for users while empowering administrators with efficient tools to oversee operations.
+Administrators have access to an admin panel where they can manage rooms, bookings, and user interactions. 
 
 ## Installation
 
